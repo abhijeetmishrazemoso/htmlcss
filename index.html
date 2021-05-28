@@ -8,6 +8,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet">
     <style>
+        p,ul li{
+            color: darkorchid;
+        }
         html {
             font-size: 1.5em;
             font-family: 'Noto Sans JP', sans-serif;
@@ -36,8 +39,8 @@
             font-size: 1.5em;
             border-radius: 25px;
             cursor:auto;
-            background-color: lightgreen;
-            color: darkorchid;
+            background-color: skyblue;
+        
         }
         textarea{
             border-radius: 10px;
@@ -73,7 +76,7 @@
             <button class="tabs" id="confirmationbutton"  onclick="activate('confirmation','confirmationbutton')">Confirmation!</button>
     </div>
         <div style="display: flex; flex-basis: 80%;justify-content: center;border:2px ridge black;border-radius: 20px;">
-            <div class="tabbing" style="display: none;flex-direction: column;"  id="home" style="display: flex;">
+            <div class="tabbing" style="display: flex;flex-direction: column;"  id="home" style="display: flex;">
                 <h2>Home</h2>
                 <h3>Details</h3>
                 <ul>
@@ -90,7 +93,7 @@
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt sequi odit cum recusandae sapiente fugit a neque, nostrum consequatur vel minus, provident eaque impedit dignissimos natus totam libero soluta obcaecati?
                 </p>
             </div>
-            <div class="tabbing" style="display: block;flex-direction: column;" id="contactme">
+            <div class="tabbing" style="display: none;flex-direction: column;" id="contactme">
                 <h2>Contact Me!</h2>
                 <form action="" onsubmit="return sendConfirmation()" id="OnlyForm">
                     <label for="Subject">Subject</label><br>
