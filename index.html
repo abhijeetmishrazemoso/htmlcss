@@ -1,151 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tabbed Portfolio</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet">
-    <style>
-        p,ul li{
-            color: darkorchid;
-        }
-        html {
-            font-size: 1.5em;
-            font-family: 'Noto Sans JP', sans-serif;
-        }
-        form{
-            background-color: lightcyan;
-            width: 75%;
-            padding:20px;
-            margin: 25px;
-        }
-        form label{
-            /* padding:25px; */
-            margin: 5px;
-            color:darkorchid;
-        }
-        input[type="text"]{
-            width: 80%;
-            height:40px;
-            /* padding:25px;x    */
-            margin:25px;
-            border-radius: 10px;
-        }
-        button[type='submit']{
-            width: 50%;
-            height: 60px;
-            font-size: 1.5em;
-            border-radius: 25px;
-            cursor:auto;
-            background-color: skyblue;
-        
-        }
-        textarea{
-            border-radius: 10px;
-            margin: 5px;
-        }
-        button.tabs{
-            color: darkorchid;
-            height:60px ;
-            min-width: 100px;
-            font-size: 1.2em;
-            border:1px solid black;
-            border-top-left-radius: 20px;
-            border-top-right-radius: 20px;
-            border-bottom: none;
-            margin-top: 1.5em;
-            padding: 20px;
-        }
-        .tabbing{
-            width:50%;
-        }
-        div h2{
-            align-self:  center;
-            text-decoration: underline;
-            letter-spacing: 3px;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/flexlayouts.css">
 </head>
+
 <body>
-    <div style="display: flex; flex-basis: 80%;justify-content: center;">
-            <button class="tabs" id="homebutton" onclick="activate('home','homebutton')">Home</button>
-            <button class="tabs" id="aboutmebutton"  onclick="activate('aboutme','aboutmebutton')">About Me!</button>
-            <button class="tabs" id="contactmebutton"  onclick="activate('contactme','contactmebutton')">Contact Me!</button>
-            <button class="tabs" id="confirmationbutton"  onclick="activate('confirmation','confirmationbutton')">Confirmation!</button>
+    <div class="button-container">
+        <button class="tabs" id="homebutton" onclick="activate('home','homebutton')">Home</button>
+        <button class="tabs" id="aboutmebutton" onclick="activate('aboutme','aboutmebutton')">About Me!</button>
+        <button class="tabs" id="contactmebutton" onclick="activate('contactme','contactmebutton')">Contact Me!</button>
+        <button class="tabs" id="confirmationbutton"
+            onclick="activate('confirmation','confirmationbutton')">Confirmation!</button>
     </div>
-        <div style="display: flex; flex-basis: 80%;justify-content: center;border:2px ridge black;border-radius: 20px;">
-            <div class="tabbing" style="display: flex;flex-direction: column;"  id="home" style="display: flex;">
-                <h2>Home</h2>
-                <h3>Details</h3>
-                <ul>
-                    <li>Name:Abhijeet</li>
-                    <li>Phone Number:684513156</li>
-                    <li>Stay: Hyderabad</li>
-                    <li>Funda of Life: Try to please others!</li>
-                    <li>Siblings:1</li>
-                </ul>
-            </div>
-            <div class="tabbing" style="display: none;flex-direction: column;" id="aboutme">
-                <h2 style="text-align: center;width: 100%;">About Me</h2>
-                <h3>Hobbies</h3>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt sequi odit cum recusandae sapiente fugit a neque, nostrum consequatur vel minus, provident eaque impedit dignissimos natus totam libero soluta obcaecati?
-                </p>
-            </div>
-            <div class="tabbing" style="display: none;flex-direction: column;" id="contactme">
-                <h2>Contact Me!</h2>
-                <form action="" onsubmit="return sendConfirmation()" id="OnlyForm">
-                    <label for="Subject">Subject</label><br>
-                    <input type="text" id="Subject" name="Subj" required>
-                    <br>
-                    <label for="Messagee">Message</label><br>
-                        <textarea name="Message" id="Messagee" cols="30" rows="10" required></textarea>
-                    </input>
-                    <br>
-                    <button type="submit">Submit</button>
-                </form>
-                <h3 id="resultMessageh2">Waiting for a new Message!</h2>
-            </div>
-            <div class="tabbing" id="confirmation" style="display:none";">
-                <h2 class="form-result" id="resultMessage">Waiting for you to send a mail.</h2>
-            </div>
+    <div class="div-container">
+        <div class="tabbing div-container-item-1" id="home">
+            <h2>Home</h2>
+            <h3>Details</h3>
+            <ul>
+                <li>Name:Abhijeet</li>
+                <li>Phone Number:684513156</li>
+                <li>Stay: Hyderabad</li>
+                <li>Funda of Life: Try to please others!</li>
+                <li>Siblings:1</li>
+            </ul>
         </div>
-    <script>
-        
-        function activate(activeId,idOfSourceButton){
-            var tabs = document.getElementsByClassName("tabbing");
-            var tabButtons = document.getElementsByClassName('tabs');
-            for (let i=0;i<tabs.length;i++) {
-                tabs[i].style.display = "none";
-            }
-            for(let i=0;i<tabButtons.length;i++){
-                tabButtons[i].style.backgroundColor = 'lightgrey';
-            }
-            document.getElementById(activeId).style.display = "flex";
-            document.getElementById(idOfSourceButton).style.backgroundColor = 'white'; 
-            document.getElementById(idOfSourceButton).style.color = 'grey'; 
-        }
-        function sendConfirmation(){
-            
-            var formm = document.forms[0];
-            formm.elements.Subj.value ="";
-            formm.elements.Message.value = "";  
-            document.getElementById("resultMessage").innerHTML = "Message Sent!";
-            document.getElementById("resultMessageh2").innerHTML = "Message Sent!";
-            
-            alert("Message Sent!");
-            changeMessageByTimeOut();
-            return false;
-        }
-
-        function changeMessageByTimeOut(){
-                setTimeout(() => {
-                    document.getElementById("resultMessage").innerHTML = "Waiting for a new Message!";
-                    document.getElementById("resultMessageh2").innerHTML = "Waiting for a new Message!";
-                }, 4000);
-        }
-
-    </script>
+        <div class="tabbing div-container-item-2" id="aboutme">
+            <h2>About Me</h2>
+            <h3>Hobbies</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt sequi odit cum recusandae sapiente
+                fugit a neque, nostrum consequatur vel minus, provident eaque impedit dignissimos natus totam libero
+                soluta obcaecati?
+            </p>
+        </div>
+        <div class="tabbing div-container-item-3" id="contactme">
+            <h2>Contact Me!</h2>
+            <form action="" onsubmit="return sendConfirmation()" id="OnlyForm">
+                <label for="Subject">Subject</label><br>
+                <input type="text" id="Subject" name="Subj" required>
+                <br>
+                <label for="Messagee">Message</label><br>
+                <textarea name="Message" id="Messagee" cols="30" rows="10" required></textarea>
+                </input>
+                <br>
+                <button type="submit">Submit</button>
+            </form>
+            <h3 id="resultMessageh2">Waiting for a new Message!</h2>
+        </div>
+        <div class="tabbing div-container-item-4" id="confirmation">
+                <h2 class=" form-result" id="resultMessage">Waiting for you to send a mail.</h2>
+        </div>
+    </div>
+    <script src="js/flexJavascript.js"></script>
 </body>
+
 </html>

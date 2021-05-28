@@ -1,0 +1,86 @@
+p,ul li{
+    color: darkorchid;
+}
+html {
+    font-size: 1.5em;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+form{
+    background-color: lightcyan;
+    width: 75%;
+    padding:20px;
+    margin: 25px;
+}
+form label{
+    /* padding:25px; */
+    margin: 5px;
+    color:darkorchid;
+}
+input[type="text"]{
+    width: 80%;
+    height:40px;
+    /* padding:25px;x    */
+    margin:25px;
+    border-radius: 10px;
+}
+button[type='submit']{
+    width: 50%;
+    height: 60px;
+    font-size: 1.5em;
+    border-radius: 25px;
+    cursor:auto;
+    background-color: skyblue;
+
+}
+textarea{
+    border-radius: 10px;
+    margin: 5px;
+}
+button.tabs{
+    color: darkorchid;
+    height:60px ;
+    min-width: 100px;
+    font-size: 1.2em;
+    border:1px solid black;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom: none;
+    margin-top: 1.5em;
+    padding: 20px;
+}
+.tabbing{
+    width:50%;
+}
+div h2{
+    align-self:  center;
+    text-decoration: underline;
+    letter-spacing: 3px;
+}
+.button-container{
+    display: flex;
+    flex-basis: 80%;
+    justify-content: center;
+}
+.div-container{
+    display: flex;
+    flex-basis: 80%;
+    justify-content: center;
+    border:2px ridge black;
+    border-radius: 20px;
+}
+.div-container-item-1{
+    display: flex;
+    flex-direction: column;
+}
+.div-container-item-2{
+    display: none;
+    flex-direction: column;
+}
+.div-container-item-3{
+    display: none;
+    flex-direction: column;
+}
+.div-container-item-4{
+    display: none;
+    flex-direction: column;
+}
