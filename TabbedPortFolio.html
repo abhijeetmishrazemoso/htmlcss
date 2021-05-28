@@ -43,17 +43,33 @@
             border-radius: 10px;
             margin: 5px;
         }
-
+        button.tabs{
+            color: darkorchid;
+            height:100px ;
+            min-width: 100px;
+            font-size: 1.2em;
+            border:1px solid black;
+            border-radius: 20px;
+            border-bottom: none;
+            margin-top: 1.5em;
+        }
+        .tabbing{
+            width:30%;
+        }
+        
     </style>
 </head>
 <body>
-    <div style="justify-content: center;align-content: center;">
+    <div style="display: flex; flex-basis: 80%;justify-content: center;">
             <button class="tabs" id="homebutton" onclick="activate('home','homebutton')">Home</button>
             <button class="tabs" id="aboutmebutton"  onclick="activate('aboutme','aboutmebutton')">About Me!</button>
             <button class="tabs" id="contactmebutton"  onclick="activate('contactme','contactmebutton')">Contact Me!</button>
             <button class="tabs" id="confirmationbutton"  onclick="activate('confirmation','confirmationbutton')">Confirmation!</button>
-            <div class="tabbing" style="display: none;"  id="home">
-                <h2>Home</h2>
+    </div>
+        <div style="display: flex; flex-basis: 80%;justify-content: center;border:2px solid black;border-radius: 20px;">
+            <div class="tabbing" style="display: none;"  id="home" style="display: flex;">
+                <h2 style="width:100%">Home</h2>
+                </br>
                 <h3>Details</h3>
                 <ul>
                     <li>Name:Abhijeet</li>
@@ -81,14 +97,14 @@
                     <br>
                     <button type="submit">Submit</button>
                 </form>
-                <h2 id="resultMessageh2"></h2>
+                <h2 id="resultMessageh2">Waiting for a new Message!</h2>
             </div>
             <div class="tabbing" id="confirmation" style="display:none";">
                 <h2 class="form-result" id="resultMessage">Waiting for you to send a mail.</h2>
             </div>
-    </div>
+        </div>
     <script>
-        var sentFlag = false;
+        
         function activate(activeId,idOfSourceButton){
             var tabs = document.getElementsByClassName("tabbing");
             var tabButtons = document.getElementsByClassName('tabs');
@@ -98,7 +114,7 @@
             for(let i=0;i<tabButtons.length;i++){
                 tabButtons[i].style.backgroundColor = 'lightgrey';
             }
-            document.getElementById(activeId).style.display = "block";
+            document.getElementById(activeId).style.display = "flex";
             document.getElementById(idOfSourceButton).style.backgroundColor = 'white'; 
             document.getElementById(idOfSourceButton).style.color = 'grey'; 
         }
