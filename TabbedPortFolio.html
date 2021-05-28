@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabbed Portfolio</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet">
+    <style>
+        html {
+            font-size: 1.5em;
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        form{
+            background-color: lightcyan;
+            width: 75%;
+            padding:20px;
+            margin: 25px;
+        }
+        form label{
+            /* padding:25px; */
+            margin: 5px;
+            color:darkorchid;
+        }
+        input[type="text"]{
+            width: 50%;
+            height:20px;
+            /* padding:25px;x    */
+            margin:25px;
+            border-radius: 10px;
+        }
+        button[type='submit']{
+            width: 50%;
+            height: 60px;
+            font-size: 1.5em;
+            border-radius: 25px;
+            cursor:auto;
+            background-color: lightgreen;
+            color: darkorchid;
+        }
+        textarea{
+            border-radius: 10px;
+            margin: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <div style="justify-content: center;align-content: center;">
+            <button class="tabs" id="homebutton" onclick="activate('home','homebutton')">Home</button>
+            <button class="tabs" id="aboutmebutton"  onclick="activate('aboutme','aboutmebutton')">About Me!</button>
+            <button class="tabs" id="contactmebutton"  onclick="activate('contactme','contactmebutton')">Contact Me!</button>
+            <button class="tabs" id="confirmationbutton"  onclick="activate('confirmation','confirmationbutton')">Confirmation!</button>
+            <div class="tabbing" style="display: none;"  id="home">
+                <h2>Home</h2>
+                <h3>Details</h3>
+                <ul>
+                    <li>Name:Abhijeet</li>
+                    <li>Phone Number:684513156</li>
+                    <li>Stay: Hyderabad</li>
+                    <li>Funda of Life: Try to please others!</li>
+                    <li>Siblings:1</li>
+                </ul>
+            </div>
+            <div class="tabbing" style="display: none;" id="aboutme">
+                <h2>About Me</h2>
+                <h3>Hobbies</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt sequi odit cum recusandae sapiente fugit a neque, nostrum consequatur vel minus, provident eaque impedit dignissimos natus totam libero soluta obcaecati?
+                </p>
+            </div>
+            <div class="tabbing" style="display: block;" id="contactme">
+                <h2>Contact Me!</h2>
+                <form action="" onsubmit="return sendConfirmation()" id="OnlyForm">
+                    <label for="Subject">Subject</label><br>
+                    <input type="text" id="Subject" name="Subj" required>
+                    <br>
+                    <label for="Messagee">Message</label><br>
+                        <textarea name="Message" id="Messagee" cols="30" rows="10" required></textarea>
+                    </input>
+                    <br>
+                    <button type="submit">Submit</button>
+                </form>
+                <h2 id="resultMessageh2"></h2>
+            </div>
+            <div class="tabbing" id="confirmation" style="display:none";">
+                <h2 class="form-result" id="resultMessage">Waiting for you to send a mail.</h2>
+            </div>
+    </div>
+    <script>
+        var sentFlag = false;
+        function activate(activeId,idOfSourceButton){
+            var tabs = document.getElementsByClassName("tabbing");
+            var tabButtons = document.getElementsByClassName('tabs');
+            for (let i=0;i<tabs.length;i++) {
+                tabs[i].style.display = "none";
+            }
+            for(let i=0;i<tabButtons.length;i++){
+                tabButtons[i].style.backgroundColor = 'lightgrey';
+            }
+            document.getElementById(activeId).style.display = "block";
+            document.getElementById(idOfSourceButton).style.backgroundColor = 'white'; 
+            document.getElementById(idOfSourceButton).style.color = 'grey'; 
+        }
+        function sendConfirmation(){
+            
+            var formm = document.forms[0];
+            formm.elements.Subj.value ="";
+            formm.elements.Message.value = "";  
+            document.getElementById("resultMessage").innerHTML = "Message Sent!";
+            document.getElementById("resultMessageh2").innerHTML = "Message Sent!";
+            
+            alert("Message Sent!");
+            changeMessageByTimeOut();
+            return false;
+        }
+
+        function changeMessageByTimeOut(){
+                setTimeout(() => {
+                    document.getElementById("resultMessage").innerHTML = "Waiting for a new Message!";
+                    document.getElementById("resultMessageh2").innerHTML = "Waiting for a new Message!";
+                }, 4000);
+        }
+
+    </script>
+</body>
+</html>
