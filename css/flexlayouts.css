@@ -1,86 +1,140 @@
-p,ul li{
+p,
+ul li {
     color: darkorchid;
 }
+
 html {
     font-size: 1.5em;
     font-family: 'Noto Sans JP', sans-serif;
 }
-form{
+
+form {
     background-color: lightcyan;
     width: 75%;
-    padding:20px;
+    padding: 20px;
     margin: 25px;
 }
-form label{
+
+form label {
     /* padding:25px; */
     margin: 5px;
-    color:darkorchid;
+    color: darkorchid;
 }
-input[type="text"]{
+
+input[type="text"] {
     width: 80%;
-    height:40px;
+    height: 40px;
     /* padding:25px;x    */
-    margin:25px;
+    margin: 25px;
     border-radius: 10px;
 }
-button[type='submit']{
+
+button[type='submit'] {
     width: 50%;
     height: 60px;
     font-size: 1.5em;
     border-radius: 25px;
-    cursor:auto;
+    cursor: auto;
     background-color: skyblue;
-
 }
-textarea{
+
+textarea {
     border-radius: 10px;
     margin: 5px;
 }
-button.tabs{
+
+button.tabs {
     color: darkorchid;
-    height:60px ;
+    height: 60px;
     min-width: 100px;
     font-size: 1.2em;
-    border:1px solid black;
+    border: 1px solid black;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     border-bottom: none;
     margin-top: 1.5em;
     padding: 20px;
 }
-.tabbing{
-    width:50%;
+
+.tabbing {
+    width: 50%;
 }
-div h2{
-    align-self:  center;
+
+div h2 {
+    align-self: center;
     text-decoration: underline;
     letter-spacing: 3px;
 }
-.button-container{
+
+.button-container {
     display: flex;
     flex-basis: 80%;
     justify-content: center;
 }
-.div-container{
+
+.div-container {
     display: flex;
     flex-basis: 80%;
     justify-content: center;
-    border:2px ridge black;
+    border: 2px ridge black;
     border-radius: 20px;
 }
-.div-container-item-1{
+
+.div-container-item-1 {
     display: flex;
     flex-direction: column;
 }
-.div-container-item-2{
+
+.div-container-item-2 {
     display: none;
     flex-direction: column;
 }
-.div-container-item-3{
+
+.div-container-item-3 {
     display: none;
     flex-direction: column;
 }
-.div-container-item-4{
+
+.div-container-item-4 {
     display: none;
     flex-direction: column;
 }
+
+.grid-photos-container {}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    border: 2px solid black;
+}
+
+.photo-item {
+    border: 2px solid black;
+}
+
+div img {
+    width: 100%;
+    height: 100%;
+    border: 2px solid black;
+}
+
+.photo-item-1 {
+    grid-column-start: 2;
+    grid-column-end: 4;
+}
+
+#confirmation {
+    width: 80%;
+}
+
+.photo-item-2 {
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+#photo-Collage {
+    width: 100%;
+    height: 100%;
+}
+
+.photo-item-3 {}
