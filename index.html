@@ -16,12 +16,12 @@
         <button class="tabs" id="homebutton" onclick="activate('home','homebutton')">Home</button>
         <button class="tabs" id="aboutmebutton" onclick="activate('aboutme','aboutmebutton')">About Me!</button>
         <button class="tabs" id="contactmebutton" onclick="activate('contactme','contactmebutton')">Contact Me!</button>
-        <button class="tabs" id="confirmationbutton" onclick="activate('confirmation','confirmationbutton')">Confirmation!</button>
+        <button class="tabs" id="confirmationbutton" onclick="activate('confirmation','confirmationbutton')">Photo Gallery!</button>
     </div>
     <div class="div-container">
         <div class="tabbing div-container-item-1" id="home">
             <h2>Home</h2>
-            <h3>Details</h3>
+            <h3>Details:</h3>
             <ul>
                 <li>Name:Abhijeet</li>
                 <li>Phone Number:684513156</li>
@@ -39,21 +39,20 @@
         <div class="tabbing div-container-item-3" id="contactme">
             <h2>Contact Me!</h2>
             <form action="" onsubmit="return sendConfirmation()" id="OnlyForm">
-                <label for="Subject">Subject</label><br>
+                <label for="Subject">Subject</label>
                 <input type="text" id="Subject" name="Subj" required>
                 <br>
                 <label for="Messagee">Message</label><br>
                 <textarea name="Message" id="Messagee" cols="30" rows="10" required></textarea>
-                </input>
                 <br>
                 <button type="submit">Submit</button>
             </form>
             <h3 id="resultMessageh2">Waiting for a new Message!</h2>
         </div>
         <div class="tabbing div-container-item-4" id="confirmation">
-            <h2 class="form-result" id="resultMessage">Waiting for you to send a mail.</h2>
+            <h2 class="form-result" id="resultMessage">Photo Gallery</h2>
 
-            <div class="grid-container">
+            <div class="grid-container" id="photo-Collage">
                 <div class="photoitem photo-item-1"><img src="images/long1.jpg" alt=""></div>
                 <div class="photoitem photo-item-2"><img src="images/pexels-guillaume-meurice-1894350.jpg" alt=""></div>
                 <div class="photoitem photo-item-3"><img src="images/pexels-jeremy-bishop-3464632.jpg" alt=""></div>

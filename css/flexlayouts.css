@@ -1,6 +1,9 @@
 p,
 ul li {
-    color: darkorchid;
+    color: rgb(163, 67, 23);
+    letter-spacing: 2px;
+    word-spacing: 5px;
+    line-height: 40px;
 }
 
 html {
@@ -9,33 +12,48 @@ html {
 }
 
 form {
-    background-color: lightcyan;
-    width: 75%;
+    background-color: rgba(250, 250, 250, .5);
+    width: 100px;
     padding: 20px;
     margin: 25px;
 }
 
+h3 {
+    font-weight: lighter;
+}
+
 form label {
-    /* padding:25px; */
-    margin: 5px;
     color: darkorchid;
 }
 
 input[type="text"] {
-    width: 80%;
     height: 40px;
-    /* padding:25px;x    */
-    margin: 25px;
+    width: 280px;
+    margin-bottom: 25px;
+    border: 1px solid black;
     border-radius: 10px;
 }
 
 button[type='submit'] {
-    width: 50%;
+    /* width: 50%; */
     height: 60px;
-    font-size: 1.5em;
+    width: 400px;
+    font-size: 1.1em;
+    border: 1px dotted black;
     border-radius: 25px;
     cursor: auto;
-    background-color: skyblue;
+    font-weight: lighter;
+    /* background-color: skyblue; */
+}
+
+#resultMessageh2 {
+    padding: 20px;
+    margin-left: 25px;
+    font-weight: lighter;
+}
+
+button:hover {
+    cursor: -webkit-grab;
 }
 
 textarea {
@@ -48,7 +66,8 @@ button.tabs {
     height: 60px;
     min-width: 100px;
     font-size: 1.2em;
-    border: 1px solid black;
+    border: 1px dotted black;
+    margin: 2px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     border-bottom: none;
@@ -62,8 +81,9 @@ button.tabs {
 
 div h2 {
     align-self: center;
-    text-decoration: underline;
+    text-decoration: solid;
     letter-spacing: 3px;
+    font-weight: lighter;
 }
 
 .button-container {
@@ -100,8 +120,6 @@ div h2 {
     flex-direction: column;
 }
 
-.grid-photos-container {}
-
 .grid-container {
     display: grid;
     grid-template-columns: auto auto auto;
@@ -112,10 +130,14 @@ div h2 {
     border: 2px solid black;
 }
 
+div p {
+    text-align: justify;
+}
+
 div img {
     width: 100%;
     height: 100%;
-    border: 2px solid black;
+    /* border: 2px solid black; */
 }
 
 .photo-item-1 {
