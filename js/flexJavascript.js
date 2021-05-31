@@ -29,3 +29,4 @@ function changeMessageByTimeOut() {
         document.getElementById("resultMessageh2").innerHTML = "Waiting for a new Message!";
     }, 4000);
 }
+activate('home', 'homebutton');
