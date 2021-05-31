@@ -17,7 +17,7 @@ body {
     margin: auto;
     display: flex;
     flex-direction: column;
-    width: 75%;
+    width: 85%;
     height: 100%;
     align-content: center;
     background-color: rgba(50, 50, 50, .3);
@@ -28,9 +28,14 @@ html {
     font-family: 'Noto Sans JP', sans-serif;
 }
 
+div>img[src*=jpg] {
+    width: 300px;
+    height: 200px;
+}
+
+#photo-collage>p {}
+
 form {
-    /* background-color: rgba(250, 250, 250, .5); */
-    /* width: 100px; */
     padding: 20px;
     margin: 25px;
 }
@@ -146,9 +151,9 @@ div h2 {
 }
 
 .grid-container {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    border: 1px dotted rgba(40, 40, 40, .2);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .photo-item {
@@ -165,6 +170,11 @@ div img {
     /* border: 2px solid black; */
 }
 
+img+p {
+    width: 75%;
+    text-align: justify;
+}
+
 .photo-item-1 {
     grid-column-start: 2;
     grid-column-end: 4;
@@ -179,7 +189,7 @@ div img {
     grid-row-end: 3;
 }
 
-#photo-Collage {
+#photo-collage {
     width: 100%;
     height: 100%;
 }
